@@ -4,7 +4,7 @@ import Hero from "../components/home-page/hero";
 
 const DUMMY_POSTS = [
   {
-    slug: "getting-started-with-nextjs",
+    slug: "getting-started-nextjs",
     title: "Getting Started with NextJS",
     image: "getting-started-nextjs.png",
     excerpt : 'It is a react framework for production and it maked better use of pre rendering properties of react js  ',

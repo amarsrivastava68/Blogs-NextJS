@@ -1,34 +1,30 @@
-import Link from 'next/link'
-import classes from './post-item.module.css'
-import Image from 'next/image'
+import Link from 'next/link';
 
 function PostItem(props) {
+    const { title, image, excerpt, date, slug } = props.post;
+    const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    });
 
-    const { title , image , excerpt , date , slug } = props.post;
-    const formattedDate = new Date(date).toLocaleDateString('en-US' , {
-        day: 'numeric' , 
-        month : 'long' , 
-        year : 'numeric'
-    })
+    const imagePath = `/images/posts/${slug}/${image}`;
+    const linkPath = `/posts/${slug}`;
 
-    const imagePath = `/images/posts/${slug}/${image}`
-
-return <li className={classes.post}>
-    <Link>
-    <a href='/'>
-        <div className={classes.image}>
-            <Image src={image} alt ='image title' width ={300} height ={200}/>
-        </div>
-        <div className={classes.content}>
-            <h3>{title}</h3>
-            <time>{formattedDate}</time>
-            <p>{excerpt}</p>
-        </div>
-    </a>
-    
-    </Link>
-
-</li>
+    return (
+        <li className="shadow-md bg-gray-800 text-center p-2">
+            <Link href={linkPath}>
+                <div className="overflow-hidden">
+                    <img src={imagePath} alt='image title' className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-4">
+                    <h3 className="mb-2 text-xl">{title}</h3>
+                    <time className="italic text-gray-300 block mb-2">{formattedDate}</time>
+                    <p className="leading-6">{excerpt}</p>
+                </div>
+            </Link>
+        </li>
+    );
 }
 
-export default PostItem
+export default PostItem;
