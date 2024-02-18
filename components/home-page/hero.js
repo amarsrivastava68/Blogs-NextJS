@@ -3,7 +3,7 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <section className="text-center bg-gradient-to-b from-gray-900 to-gray-800 py-8">
-      <div className="w-72 h-72 rounded-full overflow-hidden bg-gray-700 shadow-md mx-auto">
+      <div className="w-56   h-56 rounded-full overflow-hidden bg-gray-700 shadow-md mx-auto">
         <Image
           src="/images/site/amar.jpg"
           alt="image showing amar"
