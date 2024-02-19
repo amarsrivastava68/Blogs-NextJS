@@ -1,3 +1,5 @@
+import AllPosts from "./all-posts"
+
 const DUMMY_POSTS = [
     {
       slug: "getting-started-nextjs",
@@ -8,7 +10,7 @@ const DUMMY_POSTS = [
     },
   ];
 
-import AllPosts from "./all-posts"
+
 
 function AllPostsPage() {
 
